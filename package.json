@@ -1,0 +1,15 @@
+{
+  "name": "re-define-module",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Damian Baar <damian.baar@gmail.com> (http://github.com/damianbaar)",
+  "license": "MIT",
+  "dependencies": {
+    "vinyl": "^0.3.2",
+    "lodash": "^2.4.1"
+  }
+}

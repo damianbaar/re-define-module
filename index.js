@@ -11,7 +11,9 @@ module.exports = Module
 util.inherits(Module, File)
 
 function Module(options) {
-  if (options instanceof Module) return options
+  if (options instanceof Module) {
+    return options
+  }
 
   this._paths = []
   this._deps = []
@@ -76,13 +78,10 @@ Object.defineProperty(Module.prototype, 'contents', {
   }
 })
 
-Module.prototype.isAST = function() { 
-  return isAST(this.contents)
+Module.prototype.isAST = function() { return isAST(this.contents) }
 
-  //TODO improve, very naive implementation
-  function isAST(val) { return _.has(val, 'type') && val.type === 'Program' }
-}
-
+//TODO improve, very naive implementation
+function isAST(val) { return _.has(val, 'type') && val.type === 'Program' }
 
 function escape(val) { 
   if(process.platform === "win32") 

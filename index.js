@@ -46,7 +46,7 @@ Object.defineProperty(Module.prototype, 'paths', {
 })
 
 Object.defineProperty(Module.prototype, 'requiredAs', {
-  get: function() { return this._requiredAs || this.reference },
+  get: function() { return this._requiredAs },
   set: function(val) { this._requiredAs = val }
 })
 
@@ -76,12 +76,17 @@ Object.defineProperty(Module.prototype, 'contents', {
   }
 })
 
-Module.prototype.isAST = function() { return isAST(this.contents) }
+Module.prototype.isAST = function() { 
+  return isAST(this.contents)
 
-//TODO very naive implementation
-function isAST(val) { return _.has(val, 'type') && val.type === 'Program' }
+  //TODO improve, very naive implementation
+  function isAST(val) { return _.has(val, 'type') && val.type === 'Program' }
+}
+
 
 function escape(val) { 
-  if(process.platform === "win32") val = val.replace(/\\/g, "/")
+  if(process.platform === "win32") 
+    val = val.replace(/\\/g, "/")
+
   return val.replace(/.js$/g, '')
 }

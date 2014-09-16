@@ -9,7 +9,7 @@
   "author": "Damian Baar <damian.baar@gmail.com> (http://github.com/damianbaar)",
   "license": "MIT",
   "dependencies": {
-    "vinyl": "^0.3.2",
+    "vinyl": "0.3.2",
     "lodash": "^2.4.1"
   },
   "devDependencies": {
